@@ -183,17 +183,16 @@
 <p>　　　　 借着上面会员卡的例子来说，采用的是第二种方案，其中还需要解决的问题就是：如何分发会员卡，会员卡的内容，客户如何使用会员卡，会员卡的有效日期，会员卡的使用范围</p>
 <p>　　　　 1、如何分发会员卡、会员卡的内容：也就是cookie是如何创建的？创建后如何发送给客户端？</p>
 <p>　　　　　　　　由服务器进行创建，也就相当于咖啡店来创建会员卡，在创建会员卡的同时，就会将会员卡中的内容也给设置了</p>
-<p>　　　　　　　　　　Cookie cookie = new Cookie(key,value);　　//以键值对的方式存放内容，</p>
-<p>　　　　　　　　　　response.addCookie(cookie);　　//发送回浏览器端</p>
+<p>　　　　　　　　Cookie cookie = new Cookie(key,value);　　//以键值对的方式存放内容，</p>
+<p>　　　　　　　　response.addCookie(cookie);　　//发送回浏览器端</p>
 <p>　　　　　　　　注意：一旦cookie创建好了，就不能在往其中增加别的键值对，但是可以修改其中的内容，<br>　　　　　　　　cookie.setValue();　　//将key对应的value值修改</p>
 <p>　　　　 2、客户如何使用会员卡，cookie在客户端是如何工作的，工作原理是什么？<br>　　　　　　　　这个过程就相当于，咖啡店创建好了会员卡，并且已经设置了其中的内容，交到了客户手中，下次客户过来时，就带着会员卡过来，就知道你是会员了，然后咖啡店就拿到你的会员卡对其进行操作。</p>
 <p>　　　　 3、会员卡的有效日期？也就是cookie也是拥有有效日期的。</p>
 <p>　　　　　　　　这个可以自由设置，默认是关闭浏览器，cookie就没用了。</p>
 <p>　　　　　　　　cookie.setMaxAge(expiry);　　//设置cookie被浏览器保存的时间。</p>
-<p>　　　　　　　　　　expiry：单位秒，默认为-1，</p>
-<p> 　　　　　　　　　　　　expiry=-1：代表浏览器关闭后，也就是会话结束后，cookie就失效了，也就没有了。</p>
-<p>　　　　　　　　　　　　 expiry&gt;0：代表浏览器关闭后，cookie不会失效，仍然存在。并且会将cookie保存到硬盘中，直到设置时间过期才会被浏览器自动删除，</p>
-<p> 　　　　　　　　　　　　expiry=0：删除cookie。不管是之前的expiry=-1还是expiry&gt;0，当设置expiry=0时，cookie都会被浏览器给删除。</p>
+<p>　　　　　　　　expiry：单位秒，默认为-1，</p>
+<p> 　　　　　　expiry=-1：代表浏览器关闭后，也就是会话结束后，cookie就失效了，也就没有了。<br> expiry&gt;0：代表浏览器关闭后，cookie不会失效，仍然存在。并且会将cookie保存到硬盘中，直到设置时间过期才会被浏览器自动删除，</p>
+<p> 　　　　　　　expiry=0：删除cookie。不管是之前的expiry=-1还是expiry&gt;0，当设置expiry=0时，cookie都会被浏览器给删除。</p>
 <p>　　　　4、会员卡的使用范围？比如星巴克在北京有一个分店，在上海也有一个分店，我们只是在北京的星巴克办理了会员卡，那么当我们到上海时，就不能使用该会员卡进行打折优惠了。而cookie也是如此，可以设置服务器端获取cookie的访问路径，而并非在服务器端的web项目中所有的servlet都能访问该cookie。</p>
 <p>　　　　　　cookie默认路径：当前访问的servlet父路径。</p>
 <p>　　　　　　　　例如：<a href="http://localhost:8080/test01/a/b/c/SendCookieServlet" target="_blank" rel="noopener">http://localhost:8080/test01/a/b/c/SendCookieServlet</a></p>
@@ -206,11 +205,11 @@
 <p>　　　　5、总结Cookie：</p>
 <p>　　　　　　　　工作流程：</p>
 <p>　　　　　　　　　　1. servlet创建cookie，保存少量数据，发送浏览器。</p>
-<p> 　　　　　　　　     2. 浏览器获得服务器发送的cookie数据，将自动的保存到浏览器端。</p>
-<pre><code>   　　　　　　　  3. 下次访问时，浏览器将自动携带cookie数据发送给服务器。
+<p> 　　　　　　　　   2. 浏览器获得服务器发送的cookie数据，将自动的保存到浏览器端。</p>
+<pre><code>   　　　　　　 3. 下次访问时，浏览器将自动携带cookie数据发送给服务器。
 </code></pre><p>　　　　　　　　cookie操作</p>
 <p>　　　　　　　　　　1.创建cookie：new Cookie(name,value)</p>
-<p> 　　　　　　　　    2.发送cookie到浏览器：HttpServletResponse.addCookie(Cookie)</p>
+<p> 　　　　　　　　  2.发送cookie到浏览器：HttpServletResponse.addCookie(Cookie)</p>
 <p>　　　　　　　　　　3.servlet接收cookie：HttpServletRequest.getCookies()  浏览器发送的所有cookie</p>
 <p>　　　　　　　　cookie特点</p>
 <pre><code>  　　　　　　　1. 每一个cookie文件大小：4kb ， 如果超过4kb浏览器不识别
