@@ -57,7 +57,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/">mac</a></li>
+	        
+				<li><a href="/">python</a></li>
 	        
 			</ul>
 		</nav>
@@ -109,6 +111,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -122,12 +126,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">mac</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/">python</a></li>
 		        
 				</ul>
 			</nav>
@@ -143,6 +149,71 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-LSOpenURLsWithRole-failed-with-error-600" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/LSOpenURLsWithRole-failed-with-error-600/">LSOpenURLsWithRole() failed with error -600</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/27/LSOpenURLsWithRole-failed-with-error-600/" class="archive-article-date">
+  	<time datetime="2018-07-27T07:52:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>电脑自带的文本编辑突然不好使了就没管，反正有sublime<br>后来用终端打开bash_profile<br>报错 LSOpenURLsWithRole() failed with error -600<br>查了一圈无解</p>
+<p>后来忽然想到是不是跟文本编辑有关，查看了文本编辑，打不开的文件太多<br>文本编辑关掉没反应<br>遂将电脑重启</p>
+<p>完美解决～</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/27/LSOpenURLsWithRole-failed-with-error-600/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-session cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -165,11 +236,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>##一、会话机制</p>
-<p>　　　　Web程序中常用的技术，用来<strong>跟踪用户的整个会话</strong>。常用的会话跟踪技术是Cookie与Session。<strong>Cookie通过在客户端记录信息确定用户身份，Session通过在服务器端记录信息确定用户身份</strong>。<br>　　　　一次会话指的是：就好比打电话，A给B打电话，接通之后，会话开始，直到挂断电话，该次会话就结束了，而浏览器访问服务器，就跟打电话一样，浏览器A给服务器发送请求，访问web程序，该次会话就已经接通，其中不管浏览器发送多少请求(就相当于接通电话后说话一样)，都视为一次会话，直到浏览器关闭，本次会话结束。其中注意，一个浏览器就相当于一部电话，如果使用火狐浏览器，访问服务器，就是一次会话了，然后打开google浏览器，访问服务器，这是另一个会话，虽然是在同一台电脑，同一个用户在访问，但是，这是两次不同的会话。<br>　　　　知道了什么是会话后，思考一个问题，一个浏览器访问一个服务器就能建立一个会话，如果别的电脑，都同时访问该服务器，就会创建很多会话，就拿一些购物网站来说，我们访问一个购物网站的服务器，会话就被创建了，然后就点击浏览商品，对感兴趣的商品就先加入购物车，等待一起付账，这看起来是很普通的操作，但是想一下，如果有很多别的电脑上的浏览器同时也在访问该购物网站的服务器，跟我们做类似的操作呢？服务器又是怎么记住用户，怎么知道用户A购买的任何商品都应该放在A的购物车内，不论是用户A什么时间购买的，不能放入用户B或用户C的购物车内的呢？所以就有了cookie和session这两个技术，就像第一行说的那样，cookie和session用来跟踪用户的整个会话，Cookie和Session之间的区别和联系：<br> 　　　<br>　　　假如一个咖啡店有喝5杯咖啡免费赠一杯咖啡的优惠，然而一次性消费5杯咖啡的机会微乎其微，这时就需要某种方式来纪录某位顾客的消费数量。想象一下其实也无外乎下面的几种方案：</p>
-<p>　　　　　　1、该店的店员很厉害，能记住每位顾客的消费数量，只要顾客一走进咖啡店，店员就知道该怎么对待了。这种做法就是协议本身支持状态。但是http协议本身是无状态的</p>
-<p>　　　　　　2、发给顾客一张卡片，上面记录着消费的数量，一般还有个有效期限。每次消费时，如果顾客出示这张卡片，则此次消费就会与以前或以后的消费相联系起来。这种做法就是在客户端保持状态。也就是cookie。 顾客就相当于浏览器，cookie如何工作，下面会详细讲解</p>
-<p>　　　　　　3、发给顾客一张会员卡，除了卡号之外什么信息也不纪录，每次消费时，如果顾客出示该卡片，则店员在店里的纪录本上找到这个卡号对应的纪录添加一些消费信息。这种做法就是在服务器端保持状态。</p>
-<p>　　　　　　由于HTTP协议是无状态的，而出于种种考虑也不希望使之成为有状态的，因此，后面两种方案就成为现实的选择。具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，但实际上它还有其他选择</p>
+<p>　　　　Web程序中常用的技术，用来<strong>跟踪用户的整个会话</strong>。常用的会话跟踪技术是Cookie与Session。<strong>Cookie通过在客户端记录信息确定用户身份，Session通过在服务器端记录信息确定用户身份</strong>。<br>　　　　一次会话指的是：就好比打电话，A给B打电话，接通之后，会话开始，直到挂断电话，该次会话就结束了，而浏览器访问服务器，就跟打电话一样，浏览器A给服务器发送请求，访问web程序，该次会话就已经接通，其中不管浏览器发送多少请求(就相当于接通电话后说话一样)，都视为一次会话，直到浏览器关闭，本次会话结束。其中注意，一个浏览器就相当于一部电话，如果使用火狐浏览器，访问服务器，就是一次会话了，然后打开google浏览器，访问服务器，这是另一个会话，虽然是在同一台电脑，同一个用户在访问，但是，这是两次不同的会话。<br>
         
           <a class="article-more-a" href="/2018/05/28/session cookie/#more">more >></a>
         
